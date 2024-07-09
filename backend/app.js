@@ -57,12 +57,10 @@ io.on("connection", (socket) => {
   });
 });
 
-const port = process.env.MY_PORT || 3000;
-
 app.get("/", (req, res) => {
   res.json({ data: "hi" });
 });
 
-server.listen(port, () => {
-  console.log("app is running on port " + port);
+server.listen(3000, () => {
+  console.log("app is running on port " + 3000);
 });
