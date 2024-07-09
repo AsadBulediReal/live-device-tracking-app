@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
@@ -55,12 +57,12 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.MY_PORT || 3000;
 
 app.get("/", (req, res) => {
   res.json({ data: "hi" });
 });
 
-server.listen(PORT, () => {
-  console.log("app is running on port " + PORT);
+server.listen(port, () => {
+  console.log("app is running on port " + port);
 });
