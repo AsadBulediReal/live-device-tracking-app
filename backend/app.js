@@ -15,7 +15,7 @@ app.use(cors());
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Replace with your React app's URL
+    origin: process.env.URI, // Replace with your React app's URL
     methods: ["GET", "POST"],
   },
 });
