@@ -58,7 +58,7 @@ io.on("connection", (socket) => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ data: "hi" });
+  res.json({ data: process.env.URI });
 });
 
 server.listen(3000, () => {
