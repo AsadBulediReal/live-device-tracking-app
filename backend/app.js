@@ -11,7 +11,12 @@ const server = createServer(app);
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.URI, // Replace with your React app's URL
+    methods: ["GET", "POST"],
+  })
+);
 
 const io = new Server(server, {
   cors: {
